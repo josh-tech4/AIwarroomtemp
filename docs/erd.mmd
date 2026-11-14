@@ -1,0 +1,26 @@
+erDiagram
+    USER ||--o{ ORGANIZATION_MEMBER : joins
+    ORGANIZATION ||--o{ ORGANIZATION_MEMBER : has
+    ORGANIZATION ||--o{ BUSINESS_PROFILE : owns
+    BUSINESS_PROFILE ||--o{ BUSINESS_METRIC : records
+    BUSINESS_PROFILE ||--o{ BUSINESS_ASSUMPTION : uses
+    BUSINESS_PROFILE ||--o{ BUSINESS_COMPONENT : contains
+    BUSINESS_COMPONENT ||--o{ DEPENDENCY : source_of
+    BUSINESS_COMPONENT ||--o{ DEPENDENCY : target_of
+    BUSINESS_PROFILE ||--o{ SCENARIO : tested_by
+    SCENARIO_TEMPLATE ||--o{ SCENARIO : instantiates
+    SCENARIO ||--o{ SCENARIO_PARAMETER : configures
+    BUSINESS_PROFILE ||--o{ SIMULATION_RUN : has
+    SCENARIO ||--o{ SIMULATION_RUN : executes
+    SIMULATION_RUN ||--o{ SIMULATION_RESULT : produces
+    SCENARIO ||--o{ STRATEGY : offers
+    STRATEGY ||--o{ STRATEGY_RESULT : evaluated_as
+    SIMULATION_RUN ||--o{ STRATEGY_RESULT : contains
+    SIMULATION_RUN ||--o{ AI_ANALYSIS : analyzed_by
+    BUSINESS_PROFILE ||--o{ DECISION : records
+    SIMULATION_RUN o|--o{ DECISION : informs
+    DECISION ||--o{ ACTION_ITEM : creates
+    BUSINESS_PROFILE ||--o{ REPORT : reported_in
+    USER ||--o{ AUDIT_EVENT : performs
+    ORGANIZATION ||--o{ AUDIT_EVENT : records
+
